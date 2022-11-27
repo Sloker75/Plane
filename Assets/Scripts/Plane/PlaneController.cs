@@ -23,11 +23,4 @@ public class PlaneController : MonoBehaviour
         _rigidbody.AddTorque(_verticalInput * _torqueForce, 0f, 0f);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.TryGetComponent(out Coin coin))
-            Destroy(coin.gameObject);
-        else if(collision.gameObject.TryGetComponent(out Bomb bomb))
-            Destroy(coin.gameObject);
-    }
 }
